@@ -1,23 +1,27 @@
-%h1 Listing posts
+%nav
+  .nav-wrapper
+    %a.brand-logo{:href => "#"} Spencer Makes Things
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li
+        %a= link_to 'Home', posts_path
+      %li
+        %a= link_to 'Login', new_user_session_path, method: 'get'
+      %li
+        %a= link_to 'Logout', destroy_user_session_path, method: 'delete'
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td= post.title
-        %td= post.content
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+.btn.waves-effect.waves-light.center= link_to 'New Post', new_post_path
+- @posts.each do |post|
+  .row
+    .col.s6.offset-s3.color
+      .card.large.grey.lighten-2
+        .card-image
+          %img{:src => "images/sample-1.jpg"}
+            %span.card-title Card T @itle
+        .card-content
+          %h5= post.title 
+          %p= post.content
+        .card-action
+          %a= link_to 'Show', post
+          %a= link_to 'Edit', edit_post_path(post)
+          %a= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }   
+          
