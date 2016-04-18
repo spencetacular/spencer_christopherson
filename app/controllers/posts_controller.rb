@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.all
+    @comment = Comment.new
+    # binding.pry
     # @user = User.find(@post.user_id)
 
   end
@@ -73,6 +74,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :image_link)
     end
 end

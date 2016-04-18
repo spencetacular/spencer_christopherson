@@ -1,27 +1,17 @@
-%nav
-  .nav-wrapper
-    %a.brand-logo{:href => "#"} Spencer Makes Things
-    %ul#nav-mobile.right.hide-on-med-and-down
-      %li
-        %a= link_to 'Home', posts_path
-      %li
-        %a= link_to 'Login', new_user_session_path, method: 'get'
-      %li
-        %a= link_to 'Logout', destroy_user_session_path, method: 'delete'
-
-.btn.waves-effect.waves-light.center= link_to 'New Post', new_post_path
+= render(partial: 'nav_bar')
 - @posts.each do |post|
   .row
-    .col.s6.offset-s3.color
-      .card.large.grey.lighten-2
+    .col.s10.offset-s1.l6.offset-l3
+      .card.grey.lighten-2.z-depth-2
         .card-image
-          %img{:src => "images/sample-1.jpg"}
-            %span.card-title Card T @itle
-        .card-content
-          %h5= post.title 
-          %p= post.content
+          %img{:src => post.image_link}
+            %span.card-title= post.title 
+        .card-content.z-depth-2
+          %p= post.content 
         .card-action
-          %a= link_to 'Show', post
-          %a= link_to 'Edit', edit_post_path(post)
-          %a= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }   
+          %a= link_to 'Comments', post
+          -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+            %a= link_to 'Edit', edit_post_path(post)
+            %a= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .chip.color.white= 'tag'   
           

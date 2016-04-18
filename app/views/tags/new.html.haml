@@ -1,5 +1,9 @@
-%h1 New tag
-
-= render 'form'
+= render(partial: 'posts/nav_bar')
+.row
+  .col.s10.offset-s1.l6.offset-l3
+    .card.grey.lighten-2.z-depth-2
+      %span.white-text
+        %h1.center.align.color.blue.darken-2 New Tag
+        = render 'form'
 
 = link_to 'Back', tags_path

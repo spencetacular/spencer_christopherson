@@ -4,6 +4,28 @@ $navbar-font-color: color("white", "lighten-2") !default;
 $button-color: color("blue", "darken-2");
 $button-color-raised: color("white", "lighten-4");
 
+/*body{
+	background-image: image-url('blog/background.jpg');
+}*/
+
+html { 
+  background: url('blog/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+form {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.input-field label {
+     color: #000000;
+ }
+
+
  @import 'materialize';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

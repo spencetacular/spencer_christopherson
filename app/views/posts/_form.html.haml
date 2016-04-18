@@ -6,11 +6,16 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .input-field.label.center-align
+    = f.label :image_link
+    = f.text_field :image_link
+  .input-field.center-align 
     = f.label :title
     = f.text_field :title
-  .field
+  .input-field.center-align 
     = f.label :content
     = f.text_area :content
-  .actions
+  .btn.waves-effect.waves-light.submit.action
     = f.submit 'Save'
+  .btn.waves-effect.waves-light
+    = link_to 'New Tag', new_tag_path
