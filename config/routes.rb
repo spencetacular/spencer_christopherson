@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tags
+  resources :tag_names
   resources :comments
   resources :posts
   get 'home/index'

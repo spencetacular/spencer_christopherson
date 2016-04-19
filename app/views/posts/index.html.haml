@@ -13,5 +13,6 @@
           -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
             %a= link_to 'Edit', edit_post_path(post)
             %a= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-          .chip.color.white= 'tag'   
+            - post.tags.each do |t|
+              %p= t.name  
           
