@@ -1,0 +1,14 @@
+= render(partial: 'posts/nav_bar')
+.row
+  .col.s10.offset-s1.l6.offset-l3
+    .card.grey.lighten-2.z-depth-2
+      %span.white-text
+        %h1.center.align.color.blue.darken-2 Tags
+        - @tag_names.each do |tag_name|
+          .div
+            %h5.black-text= tag_name.name
+            .row
+              .col.s3
+                %a= link_to 'Delete', tag_name, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %br
+        .btn.waves-effect.waves-light.center.color.white= link_to 'New Tag', new_tag_name_path

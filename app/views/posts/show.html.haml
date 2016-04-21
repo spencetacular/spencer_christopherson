@@ -1,26 +1,16 @@
 = render(partial: 'nav_bar')
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Content:
-  = @post.content
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
-
-= form_for @comment do |f|
-  - if @comment.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
-      %ul
-        - @comment.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :body
-    = f.text_area :body
-  	
-  .actions
-    = f.submit 'Save'
-
+.row
+  .col.s10.offset-s1.l6.offset-l3
+    .card.grey.lighten-2.z-depth-2
+      .card-image
+        %img{:src => @post.image_link}
+          %span.card-title= @post.title 
+      .card-content.z-depth-2
+        %p= @post.content 
+      .card-action
+        -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+          %a= link_to 'Edit', edit_post_path(@post)
+          %a= link_to 'Delete', @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          / - @post.tags.each do |t|
+          /   %p= t.name  

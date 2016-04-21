@@ -1,14 +1,32 @@
-%nav
-  .nav-wrapper.fixed
-    %a.brand-logo{:href => "#"} Spencer Makes Things
-    %ul#nav-mobile.right
-      -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+.navbar-fixed
+  %nav
+    .nav-wrapper
+      %a.brand-logo.center{:href => "#!"} Spencer Makes Things
+      / %h6.center Spencer Makes Things
+      %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+        %i.material-icons menu
+      %ul.left.hide-on-med-and-down
+        -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+          %li
+            %a= link_to 'New Post', new_post_path
         %li
-          %a= link_to 'New Post', new_post_path
-      %li
-        %a= link_to 'Home', posts_path
-      %li
-        %a= link_to 'Login', new_user_session_path, method: 'get'
-      %li
-        %a= link_to 'Logout', destroy_user_session_path, method: 'delete'
+          %a= link_to 'Blog', posts_path
+        %li
+          -if current_user
+            = button_to 'faceBook logout', destroy_user_session_path, method: 'delete', class: 'btn color blue darken-4'
+          -else
+            = button_to 'faceBook login',"/users/auth/facebook", class: 'btn color blue darken-4' 
+           
+    %img#profile-img.circle{:alt => "", :src => "http://i.imgur.com/Epv9Gop.jpg"}
+      %ul#mobile-demo.side-nav
+        -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+          %li
+            %a= link_to 'New Post', new_post_path
+        %li
+          %a= link_to 'Blog', posts_path
+        %li
+          -if current_user
+            = button_to 'faceBook logout', destroy_user_session_path, method: 'delete', class: 'btn color blue darken-4'
+          -else
+            = button_to 'faceBook login',"/users/auth/facebook", class: 'btn color blue darken-4' 
       
