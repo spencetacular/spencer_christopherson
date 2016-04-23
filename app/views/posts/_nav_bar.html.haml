@@ -9,8 +9,12 @@
         -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
           %li
             %a= link_to 'New Post', new_post_path
+          %li
+            %a= link_to 'New Project', new_project_path
         %li
           %a= link_to 'Blog', posts_path
+        %li
+          %a= link_to 'Portfolio', projects_path
         %li
           -if current_user
             = button_to 'faceBook logout', destroy_user_session_path, method: 'delete', class: 'btn color blue darken-4'
@@ -22,8 +26,12 @@
         -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
           %li
             %a= link_to 'New Post', new_post_path
+          %li
+            %a= link_to 'New Project', new_project_path
         %li
           %a= link_to 'Blog', posts_path
+        %li
+          %a= link_to 'Portfolio', projects_path
         %li
           -if current_user
             = button_to 'faceBook logout', destroy_user_session_path, method: 'delete', class: 'btn color blue darken-4'

@@ -1,0 +1,19 @@
+= render(partial: 'posts/nav_bar')
+- @projects.each do |project|
+  .row
+    .col.s10.offset-s1.l6.offset-l3
+      .card.grey.lighten-2.z-depth-2
+        .card-image
+          %img{:src => project.image_link}
+            %span.card-title= project.title
+        .card-content.z-depth-2
+          %p= project.description 
+        .card-action
+          %a= link_to 'View', project
+          -if project.link != nil
+            %a= link_to 'Project Link', project.link
+          -if project.github_link != nil
+            %a= link_to 'github', project.github_link
+          -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
+            %a= link_to 'Edit', edit_project_path(project)
+            %a= link_to 'Delete', project, :method => :delete, :data => { :confirm => 'Are you sure?' }

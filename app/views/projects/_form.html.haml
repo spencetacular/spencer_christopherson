@@ -1,0 +1,27 @@
+= form_for @project do |f|
+  .input-field.label.center-align
+    = f.label :image_link
+    = f.text_field :image_link
+  .input-field.label.center-align
+    = f.label :github_link
+    = f.text_field :github_link
+  .input-field.label.center-align
+    = f.label :link
+    = f.text_field :link
+  .input-field.center-align
+    = f.label :priority
+    = f.number_field :priority
+  .input-field.center-align 
+    = f.label :title
+    = f.text_field :title
+  .input-field.center-align
+    = f.label :description
+    = f.text_area :description
+  .input-field.center-align 
+    = f.label :technology
+    = f.text_area :technology
+
+  .div
+    .btn.waves-effect.waves-light.submit.action
+      = button_to  :submit , name: "subaction",value: "update"
+    
