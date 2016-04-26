@@ -10,7 +10,7 @@
           %p= post.created_at.to_date
           %p= post.content 
         .card-action
-          %a= link_to 'Comments', post
+          %a= link_to 'Show', post
           -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
             %a= link_to 'Edit', edit_post_path(post)
             %a= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }

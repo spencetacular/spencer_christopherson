@@ -8,6 +8,15 @@ $button-color-raised: color("white", "lighten-1");
 	background-image: image-url('blog/background.jpg');
 }*/
 
+.col.header{
+	margin: 7px;
+	background-color: #79777;
+	height: 70px;
+}
+
+#fb-button{
+	margin-right: 15%;
+}
 
 #profile-img{
 	width: 15%;
@@ -16,19 +25,25 @@ $button-color-raised: color("white", "lighten-1");
 	top: 0px;
 	right: 0px;
 	border: 5px solid white;
-	z-index: 5;
+	z-index: 100;
 }
 #title{
 	margin-left: 20%;
 }
 
-html { 
+body {
+  background: grey; /* fallback for old browsers */
+  background: -webkit-linear-gradient(left, white, grey, white); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(left, white, grey, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*html { 
   background: url('blog/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
 
 form {
   margin-left: 30px;
