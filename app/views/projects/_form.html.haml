@@ -1,4 +1,6 @@
 = form_for @project do |f|
+  = f.label :finished
+  = f.select(:finished, [["Finished Project",true],["Small Project",false]])
   .input-field.label.center-align
     = f.label :image_link
     = f.text_field :image_link
