@@ -5,7 +5,7 @@
     .card.grey.lighten-2.z-depth-2
       .card-image
         %img{:src => @post.image_link}
-          %span.card-title= @post.title 
+          %span.card-title.shadow= @post.title 
       .card-content.z-depth-2
         %p= @post.content 
       .card-action

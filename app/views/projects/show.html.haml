@@ -4,10 +4,10 @@
     .card.grey.lighten-2.z-depth-2
       .card-image
         %img{:src => @project.image_link}
-          %span.card-title= @project.title
+          %span.card-title.shadow= @project.title
       .card-content.z-depth-2
         -if @project.technology
-          - @technologies = @project.technology.split(" ")
+          - @technologies = @project.technology.split(",")
           - @technologies.each do |tech|
             .chip.color.grey= tech
         %p= @project.description

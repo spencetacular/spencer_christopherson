@@ -14,8 +14,24 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 $(document).ready(function() {
     $('select').material_select();
+
+   //  $('#change_background_blog').click(function(){
+	    
+	  //   // addClass
+	  //   // $('body').addClass('blue-background');
+
+	  //   // toggleClass
+	  //   $('body').toggleClass('blog-background');
+
+	  //   // .css - not best practice
+	  //   // $('body').css('background-color', 'blue');
+	  // });
+
   });

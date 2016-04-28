@@ -8,6 +8,11 @@ $button-color-raised: color("white", "lighten-1");
 	background-image: image-url('blog/background.jpg');
 }*/
 
+.shadow{
+   /*-webkit-text-stroke-width: 1px black;*/
+   text-shadow: 2px 2px 8px black;
+}
+
 .col.header{
 	margin: 7px;
 	background-color: #79777;
@@ -19,7 +24,7 @@ $button-color-raised: color("white", "lighten-1");
 }
 
 #profile-img{
-	width: 15%;
+	width: 12%;
 	margin: 15px;
 	position: fixed;
 	top: 0px;
@@ -31,11 +36,15 @@ $button-color-raised: color("white", "lighten-1");
 	margin-left: 20%;
 }
 
-body {
-  background: grey; /* fallback for old browsers */
-  background: -webkit-linear-gradient(left, white, grey, white); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(left, white, grey, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body{
+  background: grey; 
+  background: -webkit-linear-gradient(left, white, grey, white); 
+  background: linear-gradient(left, white, grey, white); 
 }
+
+/*.blog-background {
+  background-color: black;
+}*/
 
 /*html { 
   background: url('blog/background.jpg') no-repeat center center fixed; 
