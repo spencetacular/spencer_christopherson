@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   
   def index
   	@projects = Project.all.order('priority')
-  
   end
 
   def show

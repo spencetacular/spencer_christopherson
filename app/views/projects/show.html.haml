@@ -12,11 +12,11 @@
             .chip.color.grey= tech
         %p= @project.description
       .card-action
-        %a= link_to 'Back', projects_path
+        %a= link_to 'Back to Portfolio', projects_path
         -if @project.link != nil
           %a= link_to 'Project Link', @project.link
         -if @project.github_link != nil
           %a= link_to 'github', @project.github_link
         -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
-          %a= link_to 'Edit', edit_project_path(project)
-          %a= link_to 'Delete', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %a= link_to 'Edit', edit_project_path(@project)
+          %a= link_to 'Delete', @project, :method => :delete, :data => { :confirm => 'Are you sure?' }

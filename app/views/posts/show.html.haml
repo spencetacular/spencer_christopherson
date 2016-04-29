@@ -9,6 +9,7 @@
       .card-content.z-depth-2
         %p= @post.content 
       .card-action
+        %a= link_to 'Back to Blog', posts_path
         -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
           %a= link_to 'Edit', edit_post_path(@post)
           %a= link_to 'Delete', @post, :method => :delete, :data => { :confirm => 'Are you sure?' }

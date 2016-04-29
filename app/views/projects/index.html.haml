@@ -13,7 +13,7 @@
               .chip.color.grey.lighten-1= tech
           %p= project.description
         .card-action
-          / %a= link_to 'View', project
+          %a= link_to 'View', project
           -if project.link != nil
             %a= link_to 'Project Link', project.link
           -if project.github_link != nil
