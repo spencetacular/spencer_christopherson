@@ -1,36 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
   def index
-    # @posts = Post.all
     @posts = Post.all.order('created_at DESC')
-     # binding.pry
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
-    # binding.pry
-    # @user = User.find(@post.user_id)
-
+    # @comment = Comment.new
   end
 
-  # GET /posts/new
   def new
     @post = Post.new
     @tag_names = TagName.all
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
     @post.tag_list.add("Awesome")
