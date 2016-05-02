@@ -1,4 +1,6 @@
 = render(partial: 'nav_bar')
+%a= link_to 'all', posts_path
+%a= link_to 'coding', posts_path(sort: "coding")
 - if @posts.any?
   - @posts.each do |post|
     .row

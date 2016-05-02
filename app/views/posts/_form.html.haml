@@ -15,7 +15,9 @@
   .input-field.center-align 
     = f.label :content
     = f.text_area :content
-
+  .input-field.center-align 
+    = f.label :tag_list
+    = f.text_field :tag_list
   .div
     .btn.waves-effect.waves-light.submit.action
       = button_to :submit , name: "subaction",value: "update"

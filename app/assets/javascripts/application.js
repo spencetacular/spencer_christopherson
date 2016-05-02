@@ -21,6 +21,7 @@
 
 $(document).ready(function() {
     $('select').material_select();
+    $(".dropdown-button").dropdown();
 
    //  $('#change_background_blog').click(function(){
 	    

@@ -1,12 +1,26 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @posts = Post.all.order('created_at DESC')
+  def index  
+    case params[:sort]
+    when "coding"
+      @posts = Post.tagged_with("coding")
+    when "leather"
+      @posts = Post.tagged_with("leather")
+    when "laser"
+      @posts = Post.tagged_with("laser")
+    when "electronics"
+      @posts = Post.tagged_with("electronics")
+    when "electronics"
+      @posts = Post.tagged_with("electronics")
+    else
+      @posts = Post.all.order('created_at DESC')   
+    end 
   end
 
   def show
     @post = Post.find(params[:id])
+    # binding.pry
     # @comment = Comment.new
   end
 
@@ -20,7 +34,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.tag_list.add("Awesome")
+    # @post.tag_list.add("Awesome")
 
     respond_to do |format|
       if @post.save
