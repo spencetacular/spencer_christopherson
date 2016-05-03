@@ -4,9 +4,21 @@ $navbar-font-color: color("white", "lighten-2") !default;
 $button-color: color("grey", "darken-2");
 $button-color-raised: color("white", "lighten-1");
 
-/*body{
-	background-image: image-url('blog/background.jpg');
-}*/
+.hide {
+  display: none;
+}
+
+.salt-font{
+  font-family: 'Rock Salt', serif;
+}
+
+.blog-background{
+	background: url('blog/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .shadow{
    /*-webkit-text-stroke-width: 1px black;*/

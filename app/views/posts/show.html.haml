@@ -1,8 +1,9 @@
 = render(partial: 'nav_bar')
+%body.blog-background
 - if @post
   .row
     .col.s10.offset-s1.l6.offset-l3
-      .card.grey.lighten-2.z-depth-2
+      .card.grey.lighten-0.z-depth-2
         .card-image
           %img{:src => @post.image_link}
             %span.card-title.shadow= @post.title 

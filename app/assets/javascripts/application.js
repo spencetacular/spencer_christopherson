@@ -23,6 +23,26 @@ $(document).ready(function() {
     $('select').material_select();
     $(".dropdown-button").dropdown();
 
+    $('.show_info_div').click(function(){
+    // Remove Class Way
+    // $('.info_div').removeClass('hide');
+
+    // slideToggle Way
+    $('.info_div').slideToggle('slow', function(){
+      if($('.info_div').is(':hidden')){
+        $('.show_info_div').text('Show Info');
+      } else {
+        $('.show_info_div').text('Hide Info');
+      }
+    });
+
+    // .show() way
+    // $('.info_div').show();
+
+    // toggleClass way
+    // $('.info_div').toggleClass('hide');
+  });
+
    //  $('#change_background_blog').click(function(){
 	    
 	  //   // addClass

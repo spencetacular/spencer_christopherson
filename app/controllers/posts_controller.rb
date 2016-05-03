@@ -11,8 +11,8 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with("laser")
     when "electronics"
       @posts = Post.tagged_with("electronics")
-    when "electronics"
-      @posts = Post.tagged_with("electronics")
+    when "DIY"
+      @posts = Post.tagged_with("DIY")
     else
       @posts = Post.all.order('created_at DESC')   
     end 

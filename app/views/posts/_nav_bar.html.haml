@@ -1,7 +1,7 @@
 .navbar-fixed
   %nav.color.blue.darken-4
     .nav-wrapper
-      %a.brand-logo.center{:href => "#!"} Spencer Christopherson
+      %a.brand-logo.center Spencer Christopherson
       %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
         %i.material-icons menu
       %ul.right.hide-on-med-and-down#fb-button
@@ -9,39 +9,30 @@
           %a= link_to 'GitHub', "https://github.com/spencetacular/"
         %li
           %a= link_to 'LinkedIn', "https://www.linkedin.com/in/spencerchristopherson"
-  %img#profile-img.circle{:alt => "", :src => "http://i.imgur.com/Epv9Gop.jpg"}
-%ul#dropdown1.dropdown-content
-  %li
-    %a= link_to 'all', posts_path
-  %li.divider
-  %li
-    %a= link_to 'coding', posts_path(sort: "coding")
-  %li.divider
-  %li
-    %a= link_to 'leather', posts_path(sort: "leather")
-  %li.divider
-  %li
-    %a= link_to 'laser', posts_path(sort: "laser")
-  %li.divider
-  %li
-    %a= link_to 'electronics', posts_path(sort: "electronics")
-  %li.divider
-  %li
-    %a= link_to 'DIY', posts_path(sort: "DIY")
-.navbar-fixed
-  %nav
-    .nav-wrapper
-      %a.brand-logo.center{:href => "#!"} makes things
-      %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
       %ul.left.hide-on-med-and-down
         %li
           %a= link_to 'Blog', posts_path 
         %li
           %a= link_to 'Portfolio', projects_path
+  %img#profile-img.circle{:alt => "", :src => "http://i.imgur.com/Epv9Gop.jpg"}
+.navbar-fixed
+  %nav
+    .nav-wrapper
+      %a.brand-logo.center.salt-font makes things
+      %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+      %ul.left.hide-on-med-and-down#fb-button
         %li
-          %a.dropdown-button{"data-activates" => "dropdown1", :href => "#!"}
-            Sort Posts
-            %i.material-icons.right arrow_drop_down
+          %a= link_to 'All Posts', posts_path
+        %li
+          %a= link_to 'Coding', posts_path(sort: "coding")
+        %li
+          %a= link_to 'Leather', posts_path(sort: "leather")
+        %li
+          %a= link_to 'Laser', posts_path(sort: "laser")
+        %li
+          %a= link_to 'Electronics', posts_path(sort: "electronics")
+        %li
+          %a= link_to 'DIY', posts_path(sort: "DIY")
       %ul.right.hide-on-med-and-down#fb-button
         %li
           -if current_user
@@ -53,7 +44,7 @@
   .navbar-fixed
     %nav.color.blue.lighten-2
       .nav-wrapper
-        %a.brand-logo.center{:href => "#!"} Administrator
+        %a.brand-logo.center Administrator
         %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
         %ul.left.hide-on-med-and-down
           -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
@@ -62,6 +53,7 @@
             %li
               %a= link_to 'New Project', new_project_path
     %img#profile-img.circle{:alt => "", :src => "http://i.imgur.com/Epv9Gop.jpg"}
+
 %ul#mobile-demo.side-nav
   -if current_user && current_user.email == ENV["FACEBOOK_ADMIN_EMAIL"]
     %li
@@ -76,6 +68,18 @@
     %a= link_to 'GitHub', "https://github.com/spencetacular/"
   %li
     %a= link_to 'LinkedIn', "https://www.linkedin.com/in/spencerchristopherson"
+  %li
+    %a= link_to 'all posts', posts_path
+  %li
+    %a= link_to 'coding', posts_path(sort: "coding")
+  %li
+    %a= link_to 'leather', posts_path(sort: "leather")
+  %li
+    %a= link_to 'laser', posts_path(sort: "laser")
+  %li
+    %a= link_to 'electronics', posts_path(sort: "electronics")
+  %li
+    %a= link_to 'DIY', posts_path(sort: "DIY")
   %li
     -if current_user
       = button_to 'faceBook logout', destroy_user_session_path, method: 'delete', class: 'btn color blue darken-4'

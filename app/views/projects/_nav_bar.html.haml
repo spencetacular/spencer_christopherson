@@ -4,6 +4,11 @@
       %a.brand-logo.center{:href => "#!"} Spencer Christopherson
       %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
         %i.material-icons menu
+      %ul.left.hide-on-med-and-down
+        %li
+          %a= link_to 'Blog', posts_path
+        %li
+          %a= link_to 'Portfolio', projects_path
       %ul.right.hide-on-med-and-down#fb-button
         %li
           %a= link_to 'GitHub', "https://github.com/spencetacular/"
@@ -15,11 +20,6 @@
     .nav-wrapper
       %a.brand-logo.center{:href => "#!"} Full Stack Web Developer
       %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
-      %ul.left.hide-on-med-and-down
-        %li
-          %a= link_to 'Blog', posts_path
-        %li
-          %a= link_to 'Portfolio', projects_path
       %ul.right.hide-on-med-and-down#fb-button
         %li
           -if current_user
