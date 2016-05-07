@@ -3,11 +3,16 @@
 - if @post
   .row
     .col.s10.offset-s1.l6.offset-l3
-      .card.grey.lighten-0.z-depth-2
+      .card.grey.lighten-2.z-depth-2
         .card-image
           %img{:src => @post.image_link}
             %span.card-title.shadow= @post.title 
         .card-content.z-depth-2
+          -if @post.tag_list.any?
+            - @tags = @post.tag_list
+            - @tags.each do |tag|
+              .chip.color.grey.lighten-0= tag
+          %p= @post.created_at.to_date
           %p= @post.content 
         .card-action
           %a= link_to 'Back to Blog', posts_path
