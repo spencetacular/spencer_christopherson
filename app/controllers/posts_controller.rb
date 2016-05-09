@@ -11,6 +11,8 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with("laser")
     when "electronics"
       @posts = Post.tagged_with("electronics")
+    when "robots"
+      @posts = Post.tagged_with("robots")
     when "DIY"
       @posts = Post.tagged_with("DIY")
     else
