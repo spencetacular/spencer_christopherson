@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts 
 
+  # activate :pagination do
+  #   pageable_resources :posts do |page|
+  #     page.path.start_with?('posts/')
+  #   end
+  # end
+
   get 'home/index'
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}

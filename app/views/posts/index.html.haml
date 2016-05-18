@@ -26,4 +26,8 @@
               %a= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
               / - post.tags.each do |t|
             /   %p= t.name  
+.center.grey
+  = will_paginate @posts, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0
+
+
           

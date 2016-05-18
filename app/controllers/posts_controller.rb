@@ -4,19 +4,19 @@ class PostsController < ApplicationController
   def index  
     case params[:sort]
     when "coding"
-      @posts = Post.tagged_with("coding")
+      @posts = Post.tagged_with("coding").order('created_at DESC').paginate(page: params[:page], per_page: 10)  
     when "leather"
-      @posts = Post.tagged_with("leather")
+      @posts = Post.tagged_with("leather").order('created_at DESC').paginate(page: params[:page], per_page: 10) 
     when "laser"
-      @posts = Post.tagged_with("laser")
+      @posts = Post.tagged_with("laser").order('created_at DESC').paginate(page: params[:page], per_page: 10) 
     when "electronics"
-      @posts = Post.tagged_with("electronics")
+      @posts = Post.tagged_with("electronics").order('created_at DESC').paginate(page: params[:page], per_page: 10) 
     when "robots"
-      @posts = Post.tagged_with("robots")
+      @posts = Post.tagged_with("robots").order('created_at DESC').paginate(page: params[:page], per_page: 10) 
     when "DIY"
-      @posts = Post.tagged_with("DIY")
+      @posts = Post.tagged_with("DIY").order('created_at DESC').paginate(page: params[:page], per_page: 10) 
     else
-      @posts = Post.all.order('created_at DESC')   
+      @posts = Post.all.order('created_at DESC').paginate(page: params[:page], per_page: 10)  
     end 
   end
 
