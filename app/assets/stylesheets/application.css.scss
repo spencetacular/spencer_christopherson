@@ -59,13 +59,6 @@ body{
   background-color: black;
 }*/
 
-/*html { 
-  background: url('blog/background.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
 
 form {
   margin-left: 30px;
@@ -76,7 +69,9 @@ form {
      color: #000000;
  }
 
-
+.pagination a li.active {
+  color: #fff;
+}
 
 
  @import 'materialize';
@@ -92,9 +87,7 @@ form {
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
 
- .pagination a li.active {
-  color: #fff;
-}
+ 
 
  *= require_tree .
  *= require_self

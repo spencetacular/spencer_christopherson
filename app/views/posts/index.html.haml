@@ -14,7 +14,7 @@
               - @tags.each do |tag|
                 .chip.color.grey.lighten-0= tag
             %p= post.created_at.to_date
-            %p= post.content 
+            %p= post.content.html_safe 
           .card-action
             %a= link_to 'View', post
             -unless post.link.to_s.strip.length == 0
@@ -26,8 +26,9 @@
               %a= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
               / - post.tags.each do |t|
             /   %p= t.name  
-.center.grey
-  = will_paginate @posts, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0
+.center.grey.lighten-2
+  = will_paginate @posts, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0
+
 
 
           
